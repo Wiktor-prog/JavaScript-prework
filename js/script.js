@@ -21,6 +21,21 @@ function getMoveName(argMoveId) {
   }
 }
 
+function buttonClicked(playerMove) {
+
+  clearMessages();
+  
+  console.log(playerMove + ' został kliknięty');
+  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  console.log('wylosowana liczba to: ', randomNumber);
+  let computerMove = getMoveName(randomNumber);
+  console.log('ruch komputera to: ', computerMove);
+  
+  displayResult(playerMove, computerMove);
+}
+
+
+
 /**
  * Describe this function...
  */
@@ -54,3 +69,19 @@ console.log('wylosowana liczba to: ' + randomNumber);
 computerMove = getMoveName(randomNumber);
 console.log('ruch komputera to: ' + computerMove);
 displayResult(playerMove, computerMove);
+
+
+
+
+
+buttonRock.addEventListener('click', function(){
+  buttonClicked('kamień');
+});
+
+buttonPaper.addEventListener('click', function(){
+  buttonClicked('papier');
+});
+
+buttonScissors.addEventListener('click', function(){
+  buttonClicked('nożyce');
+});
